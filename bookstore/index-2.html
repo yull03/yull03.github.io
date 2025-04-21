@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/store style.css" />
+    <title>Yes-24 페이지</title>
+  </head>
+  <body>
+    <main>
+      <section id="book">
+        <div class="book-img">
+            <div class="page">
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+            <div class="side"></div>
+        </div>
+        <script>
+            const book=document.querySelector(".book-img")
+            book.addEventListener("click",()=>{
+                book.classList.toggle("flipped");
+            });
+        </script>
+      </section>
+      <section id="detail">
+        <div class="one">
+          <div>
+            <p class="border-box">소득공제</p>
+          </div>
+          <h1>사진 PHOTOGRAPHY</h1>
+          <div>
+            <p class="r-border">
+              바바라 런던, 짐 스톤, 존 업턴 저/임수식, 김환희 역 외 1명
+            </p>
+            <p class="r-border">마진사</p>
+            <p>2019년 12월 25일</p>
+          </div>
+          <div>
+            <p>★★★★★ 10.0</p>
+            <p class="border-box">▽</p>
+            <p class="r-border">회원리뷰(15건)</p>
+            <p>판매지수 7,764</p>
+            <p class="border-box">?</p>
+            <p class="r-border">예술 82위</p>
+            <p>예술 top100 40주</p>
+          </div>
+        </div>
+        <div class="two">
+          <div>
+            <p class="text-red rect-radius">구매혜택</p>
+            <p class="text-red text-w">
+              [세계책의날]클립보드, 북파우치(포인트 차감) 〉
+            </p>
+          </div>
+          <div>
+            <p>정가</p>
+            <p>38,000원</p>
+          </div>
+          <div>
+            <p class="text-w">판매가</p>
+            <p class="text-red text-big">
+              34,200원<span style="font-size: 1rem; font-weight: 500"
+                >(10% 할인)</span>
+            </p>
+          </div>
+          <div>
+            <p class="text-w">
+              크래마 머니<br>최대 혜택가<span class="border-box">?</span>
+            </p>
+            <p class="text-big">32,000원</p>
+          </div>
+          <div>
+            <p>Yes포인트<span class="border-box">></span></p>
+            <p>750원 5% 적립</p>
+          </div>
+          <div>
+            <p></p>
+            <p>
+              5만원 이상 구매 시 2천원 추가적립<span class="border-box">?</span>
+            </p>
+          </div>
+        </div>
+        <div class="two">
+          <div>
+            <p>결제혜택</p>
+            <p>
+              카드/간편결제 혜택을 확인 하세요 <span class="border-box">▽</span>
+            </p>
+          </div>
+        </div>
+        <div class="two">
+          <div>
+            <p>베송안내 <span class="border-box"> 〉</span></p>
+            <p>서울특별시 영등포구 은행로 11(여의도동, 일신빌딩)</p>
+          </div>
+          <div class="del">
+            <span>하루배송</span>
+            <span>19시 까지 주문하면 <span style="font-weight: bolder;">내일 (4/22, 화)</span>도착 예정</span>
+          </div>
+          <p>배송비: 유료(도서 15,000원 이상 무료) <span class="border-box">?</span></p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <title>book스토어</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 800px;
+        }
+        
+        .book> .page{
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+        }
+        .book>.page>div{
+            width: 200px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateZ(25px);
+            background-position: center;
+            background-size: cover;
+        }
+        .book>.page>.front{
+            background-image: url(images/front.jfif);
+        }
+        .book>.page>.back{
+            background-image: url(images/back.jfif);
+            transform: rotateY(180deg) translateZ(25px)
+        }
+        .book>.side{
+            background-image: url(images/XL.jfif);
+            left: -25px;
+            width: 50px;
+            height: 300px;
+            transform: rotateY(-90deg);
+        }
+        .book{
+            transform-style: preserve-3d;
+            position: relative;
+            width: 200px;
+            height: 300px;
+            transition: all 0.5s;
+            box-shadow: 10px 10px 20px rgb(0,0,0,0.5);
+            
+        }
+        .book:not(.flipped):hover{
+            transform: rotateY(40deg);
+            cursor: url(images/arow-3.png), auto;
+        }
+        .book.flipped{
+            transform: rotateY(180deg);
+        }
+        .front, .back, .side{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .store{
+            margin: 50px;
+        }
+        .store>.h2{
+            padding: 30px;
+        }
+        .store>p{
+            width: 200px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="book">
+        <div class="page">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+        <div class="side"></div>
+    </div>
+    <script>
+        const book=document.querySelector(".book")
+        book.addEventListener("click",()=>{
+            book.classList.toggle("flipped");
+        });
+    </script>
+    <div class="store">
+        <h2>사진 PHOTOGRAPHY<span>[제12판]</span></h2>
+        <P><a href="#">바바라 런던</a></P>
+        <P>외 4명</P>
+        <P><a href="#">미진사</a></P>
+        <p>2019년 12월 25일</p>
+        <p>★★★★★ 10.0</p>
+        <p>회원리뷰(<span>15</span>건)</p>
+        <p>판매지수 7,764</p>
+        <p><span class="best">베스트</span>에술 82위</p>
+        <p>예술 top100 40주</p>
+    </div>
+    
+</body>
+</html>

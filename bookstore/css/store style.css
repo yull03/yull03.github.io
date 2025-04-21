@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+
+/**** common****/
+.border-box{
+    border: 1px solid #888;
+    box-shadow: 0 0 3px rgba(0,0,0, 0.3);
+    padding: 2px 4px;
+    margin: 0 6px;
+}
+.r-border{
+    border-right: 1px solid #aaa;
+}
+.text-red{
+    color: tomato;
+}
+.text-big{
+    font-size: 1.5rem;
+    font-weight: border;
+}
+.text-w{
+    font-weight: bolder;
+}
+.rect-radius{
+    border-radius: 20px;
+    border: 1px solid tomato;
+    padding: 2px auto;
+    text-align: center;
+}
+/*******************/
+
+main{
+    width: 1000px;
+    display: flex;
+    gap: 1rem;
+    margin: 50px auto;
+}
+section#book{
+    width: 40%;
+    perspective: 1000px;
+}
+.book-img{
+    width: 100%;
+    height: 78%;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    position: relative;
+    transition: all 0.5s;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+}
+.book-img>.page{
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+.book-img>.page>div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateZ(25px);
+    backface-visibility: hidden;
+}
+.book-img>.page>.front{
+    background-image: url(../images/front.jfif);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.book-img>.page>.back{
+    background-image: url(../images/back.jfif); 
+    transform: rotateY(180deg) translateZ(25px);
+    background-size: contain;
+    background-position: center;
+}
+.book-img>.side{
+    left: -25px;
+    width: 50px;
+    height: 100%;
+    background-image: url(../images/XL.jfif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: rotateY(-90deg);
+}
+.front, .back, .side{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.book-img:not(.flipped):hover{
+    transform: rotateY(40deg);
+    cursor: url(../images/arow-3.png), auto;
+}
+.book-img.flipped{
+    transform: rotateY(180deg);
+}
+
+
+
+
+/* detail style */
+section#detail{
+    width: 60%;
+}
+section#detail> div{
+    padding: 10px 0;
+    border-bottom:1px solid #aaa;
+}
+
+section#detail>.one> div{
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+}
+section#detail> .one > div > p{
+    padding: 0 6px;
+}
+section#detail> .two> div{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 10px 0;
+}
+
+section#detail> .two> div> p:nth-child(1){
+    width: 120px;
+}
+section#detail>.two>div>p>span{
+    display: inline-block;
+}
+.del{
+    background-color: rgb(209, 255, 240);
+    padding: 10px;
+}
+.del>span{
+    display: inline-block;
+}
+.del>span:nth-child(1){
+    background-color: yellowgreen;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}
