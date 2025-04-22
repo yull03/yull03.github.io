@@ -23,7 +23,7 @@
 }
 .rect-radius{
     border-radius: 20px;
-    border: 1px solid tomato;
+    border: 1px solid tomato; 
     padding: 2px auto;
     text-align: center;
 }
