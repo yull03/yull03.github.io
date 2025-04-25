@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+body{
+    height: 650px;
+    width: 1000px;
+    display: flex;
+}
+header{
+    width: 20%;
+    height: 100%;
+    background-color: #777;
+}
+header>ul{
+    
+}
+header >ul>li{
+display: none;
+}
+main{
+    width: 100%;
+    height: 100%;
+    background-color: #999;
+}
+
+#slider{
+    height: 350px;
+    background-color: #888;
+    background-image: url(../images/slide3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+#contents{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #999;
+}
+#contents ul{
+    width: 100%;
+    height: 100%;
+    
+}
+#contents > ul>a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+footer{
+    height: 100px;
+    background-color: #555;
+}
