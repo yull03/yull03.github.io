@@ -386,7 +386,16 @@ footer .footer-wrap > p{
   padding: 0 1rem;
   font-size: 1.5rem;
 }
-footer .links > li{
+footer .links > li:nth-child(1){
+  border: 1px solid var(--main-color);
+  background-color: var(--sub-color);
+  color: var(--main-color);
+  padding: 1rem;
+  border-radius: 4rem;
+  margin: 1rem 0;
+}
+footer .links > li:nth-child(2){
+    border: 1px solid var(--sub-color);
   background-color: var(--main-color);
   color: var(--sub-color);
   padding: 1rem;

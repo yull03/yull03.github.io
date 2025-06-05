@@ -123,3 +123,50 @@ gsap.fromTo("footer",{
     toggleActions:"play none none none",
   }
 });
+
+//첫번쨰 링크 버튼
+// const li=document.querySelectorAll(".links>li");
+// console.log(li);
+gsap.to(".links>li",{
+  backgroundColor: (i)=>(i===0 ? "#2957E2":"#eeeeee"),
+  color:(i)=>(i===0 ? "#eeeeee": "#2957E2"),
+  borderColor: (i)=>(i===0 ? "#2957E2":"#eeeeee"),
+  duration:2,
+  repeat:-1,
+  yoyo:true,
+  ease:"power1.inOut",
+  scrollTrigger:{
+    trigger: "footer",
+    start:"top 50%",
+    toggleActions:"play none none none"
+  }
+});
+// gsap.to(".links>li:nth-child(1)",{
+//   backgroundColor:"#2957E2",
+//   color: "#eeeeee",
+//   borderColor:"#2957E2",
+//   duration:2,
+//   repeat:-1,
+//   yoyo: true,
+//   ease: "power1.inOut",
+//   scrollTrigger:{
+//     trigger: "footer",
+//     start:"top 50%",
+//     toggleActions:"play none none none"
+//   }
+// });
+
+// gsap.to(".links>li:nth-child(2)",{
+//   backgroundColor:"#eeeeee",
+//   color: "#2957E2",
+//   borderColor:"#eeeeee",
+//   duration:2,
+//   repeat:-1,
+//   yoyo: true,
+//   ease: "power1.inOut",
+//   scrollTrigger:{
+//     trigger: "footer",
+//     start:"top 50%",
+//     toggleActions:"play none none none"
+//   }
+// });
