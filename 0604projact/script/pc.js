@@ -1,4 +1,4 @@
-
+(function(){
 //header 영역의 title이 오른쪽에 왼쪽으로 이동
 const $headerMsg = document.querySelectorAll("header .title li");
 gsap.from($headerMsg,{
@@ -158,6 +158,6 @@ $home.addEventListener("click",()=>{
     top: 0
   });
 });
-
+})();
 
 

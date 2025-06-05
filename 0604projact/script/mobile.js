@@ -1,3 +1,5 @@
+(function(){
+
 //header
 gsap.from(".title>li", {
   y: -100,
@@ -7,8 +9,8 @@ gsap.from(".title>li", {
 });
 
 //화살표 위에서 아래로 이동, 1번 화살표 실행 되면서 2번 화살표 실행
-const tl = gsap.timeline({ repeat: -1 });
-tl.to(".arrow>p", {
+const tl3 = gsap.timeline({ repeat: -1 });
+tl3.to(".arrow>p", {
   y: 10,
   opacity: 1,
   stagger: 0.2,
@@ -170,3 +172,4 @@ gsap.to(".links>li",{
 //     toggleActions:"play none none none"
 //   }
 // });
+})();
