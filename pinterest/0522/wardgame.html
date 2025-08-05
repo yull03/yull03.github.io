@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game</title>
+</head>
+<style>
+    view{
+        display: none;
+    }
+</style>
+<body>
+    <div class="start">
+        <input type="text" id="start-word">
+        <button>시작</button>
+    </div>
+    <div class="view">
+    <p>제시어</p>
+    <div>
+        <span>낱말 입력 :</span>
+        <input type="text" id="word" placeholder="낱말을 입력하세요">
+        <button id="btn-in">입력</button>
+    </div>
+    <ul id="word-list"></ul>
+    </div>
+    <script>
+        let keyword ='';
+        const sbtn=document.querySelector(".start>button");
+        const sin=document.querySelector("#start-word");
+        const in1=document.querySelector("#word");
+        const btn=document.querySelector("#btn-in");
+
+        const list=document.querySelector("#word-list");
+
+        const changePcpntent=()=>{
+            const $p=document.querySelector("p");
+            $p.textContent=`제시어 ${keyword}`;
+        }
+        const createli=(keyword)=>{
+            const elem=document.createElement("li");
+                elem.textContent=keyword;
+                list.appendChild(elem);
+        }
+        const handleStartBtn=()=>{
+            const elem =document.querySelector("#start-word").value;
+            if(elem !== ''){
+                const elemlist=document.createElement("li");
+                elemlist.textContent=elem;
+                list.appendChild(elemlist);
+                const $view=document.querySelector("view");
+                $view.style.display="block";
+                const $start=document.querySelector(".start");
+                $start.style.display="none";
+                changePcpntent
+            }else{
+                alert("낱말을 입력하세요");
+                return;
+            }
+        }
+
+        // 시작 버튼을 누르면, 입력값이 있는지 확인하고
+        // 있으면 ul(#word-list)에 추가
+        sbtn.addEventListener("click",handleStartBtn);
+        const handleWordInput=()=>{
+            const keyword=in1.value.trim();
+            if(keyword === ''){
+                alert("낱말을 입력하세요");
+                return;
+            }
+            const last =list.lastElementChild.textContent;
+            const lastword=last[last.length-1];
+            const firstword=keyword[0];
+            if(lastword === firstword){
+                changePcpntent(keyword);
+                createli(keyword);
+            }else{
+                alert(`틀렸어요. ${lastword} 시작해야합니다`)
+            }
+            in1.value='';
+            in1.focus();
+        }
+        
+        /**
+         * 낱말 입력하는 input에서 입력값 읽어오기 :keyword변수에 저장
+         * 입력 버튼을 눌렀을 때와, input에서 enter키를 눌렀을때
+         * */
+
+        btn.addEventListener('click',()=>{
+            keyword=in1.value.trim();
+            $p.textContent=keyword;
+
+        });
+        btn.addEventListener("click",handleWordInput);
+        in1.addEventListener('keydown',(e)=>{
+            if(e.key === 'Enter'){
+            btn.click();
+            }
+        });
+    
+            /**
+          * keyword 값을 p태그에 표시
+          * */
+    </script>
+</body>
+</html>

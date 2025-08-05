@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력한 키워드 감지</title>
+</head>
+<body>
+    <input type="text" id="filter" placeholder="리스트 필터링">
+    <ul id="items">
+        <li>사과</li>
+        <li>수박</li>
+        <li>딸기</li>
+        <li>바나나</li>
+        <li>포도</li>
+    </ul>
+    <script>
+        const in1=document.querySelector("#filter");
+        const $items=document.querySelectorAll("#items>li");
+        in1.addEventListener("keyup",()=>{
+            // console.log(in1.value.trim());
+            const text=in1.value.trim();
+            $items.forEach((item)=>{
+                const data= item.textContent;
+                if(data.includes(text)){
+                    //true면 보여야함 display:block
+                    item.style.display='block';
+
+                }else{
+                    //false이면 안보여야 됨 display;none
+                    item.style.display='none';
+                }
+            });
+            
+        });
+    </script>
+</body>
+</html>

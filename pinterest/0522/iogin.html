@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter키로 로그인</title>
+</head>
+<body>
+    <input type="text" id="user" placeholder="아이디 입력">
+    <input type="password" id="pass" placeholder="비밀번호 입력">
+    <button id="LoginBtn">로그인</button>
+</body>
+<script>
+    /**
+     * 버튼을 클릭을 하거나, enter키를 비밀번호 입력창에서 누르면
+     * 로그인을 실행합니다.
+     * 로그인이 싱행되면 alert창으로
+     * id={아이디 입력값} passward={비밀번호 입력값} 으로 로그인 합니다
+     * 로 출력해 주세요
+     * */
+    const in1=document.querySelector("#user");
+    const in2=document.querySelector("#pass");
+    const btn=document.querySelector("#LoginBtn");
+
+    btn.addEventListener('click', ()=>{
+        alert(`id: ${in1.value} passward: ${in2.value}`);
+        in1.value='';
+        in2.value='';
+    });
+    in2.addEventListener("keydown",(event)=>{
+        if(event.key === 'Enter'){
+        btn.click();
+        }
+    });
+    </script>
+</html>
